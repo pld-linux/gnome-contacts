@@ -1,18 +1,20 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	0.1.2
+Version:	0.1.3
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
 Source0:	http://download.gnome.org/sources/gnome-contacts/0.1/%{name}-%{version}.tar.xz
-# Source0-md5:	0c44633a0801022050e057e08ceb4980
+# Source0-md5:	b5687e96f1072bee1b0127578494d7a2
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	desktop-file-utils
 BuildRequires:	folks-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	intltool
 BuildRequires:	libnotify-devel
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 0.13.3
+BuildRequires:	xz
 
 %description
 %{name} is a standalone contacts manager for GNOME desktop.
@@ -21,7 +23,8 @@ BuildRequires:	vala >= 0.13.3
 %setup -q
 
 %build
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
