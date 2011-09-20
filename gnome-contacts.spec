@@ -9,6 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/0.1/%{name}-%{ver
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake
+BuildRequires:	evolution-data-server-devel >= 3.1.0
 BuildRequires:	folks-devel >= 0.6.1.1
 BuildRequires:	glib2-devel >= 1:2.29.12
 BuildRequires:	gnome-desktop-devel >= 3.0
@@ -21,6 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 1:0.14.0
 BuildRequires:	xz
+Requires:	evolution-data-server >= 3.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
