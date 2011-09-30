@@ -1,18 +1,18 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	0.1.5.2
+Version:	3.2.0.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/0.1/%{name}-%{version}.tar.xz
-# Source0-md5:	5eb2f9e3f11347500c16b12777cd020b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.2/%{name}-%{version}.tar.xz
+# Source0-md5:	9d7ab265ad9f747723ee9742e14cf606
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 3.1.0
+BuildRequires:	evolution-data-server-devel >= 3.2.0
 BuildRequires:	folks-devel >= 0.6.1.1
-BuildRequires:	glib2-devel >= 1:2.29.12
-BuildRequires:	gnome-desktop-devel >= 3.0
+BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	intltool
@@ -20,9 +20,9 @@ BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	vala >= 1:0.14.0
+BuildRequires:	vala >= 2:0.14.0
 BuildRequires:	xz
-Requires:	evolution-data-server >= 3.1.0
+Requires:	evolution-data-server >= 3.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
