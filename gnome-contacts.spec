@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.2.0.1
+Version:	3.2.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	9d7ab265ad9f747723ee9742e14cf606
+# Source0-md5:	b7974ffcdd106fe9c42a074c465d0ef0
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake
