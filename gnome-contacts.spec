@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.4.0
+Version:	3.4.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	1d3133ae36e8a7938e24423b90a0222b
+# Source0-md5:	e5eb42a24316d247405fd42e872f88ae
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake
@@ -15,7 +15,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.31.10
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk+3-devel
+BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	intltool
 BuildRequires:	libgee-devel
 BuildRequires:	libnotify-devel
