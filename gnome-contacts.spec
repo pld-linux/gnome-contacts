@@ -1,24 +1,24 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.6.2
+Version:	3.8.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	6af361b582015287d57760d491dc6e34
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	e05fb4992de310fd09a91fcf0e1188d0
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
-BuildRequires:	automake
+BuildRequires:	automake >= 1.12
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	evolution-data-server-devel >= 3.6.0
-BuildRequires:	folks-devel >= 0.7.3
-BuildRequires:	gettext-devel
+BuildRequires:	folks-devel >= 0.9.1
+BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	gtk+3-devel >= 3.4.0
-BuildRequires:	intltool
-BuildRequires:	libgee-devel
+BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -29,6 +29,7 @@ BuildRequires:	vala >= 2:0.17.2
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.32.0
 Requires:	evolution-data-server >= 3.6.0
+Requires:	gtk+3 >= 3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,10 +39,9 @@ gnome-contacts is a standalone contacts manager for GNOME desktop.
 %setup -q
 
 %build
-mkdir m4
 %{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I m4
+%{__aclocal} -I m4 -I libgd
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -73,5 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-contacts-search-provider
 %{_datadir}/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.Contacts.enums.xml
 %{_datadir}/gnome-shell/search-providers/gnome-contacts-search-provider.ini
 %{_desktopdir}/%{name}.desktop
