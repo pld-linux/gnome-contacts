@@ -1,22 +1,22 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.8.3
+Version:	3.10
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	a113a11c6d2390f2613ae984922c63a1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	ab5e23b09cff8974a304e4a6a014972c
 URL:		https://live.gnome.org/ThreePointOne/Features/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake >= 1.12
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	evolution-data-server-devel >= 3.6.0
-BuildRequires:	folks-devel >= 0.9.1
+BuildRequires:	folks-devel >= 0.9.5
 BuildRequires:	gettext-devel >= 0.17
-BuildRequires:	glib2-devel >= 1:2.32.0
+BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk+3-devel >= 3.4.0
+BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libnotify-devel
@@ -25,11 +25,11 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	telepathy-glib-devel >= 0.17.5
-BuildRequires:	vala >= 2:0.17.2
+BuildRequires:	vala >= 2:0.22.0
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.32.0
+Requires(post,postun):	glib2 >= 1:2.38.0
 Requires:	evolution-data-server >= 3.6.0
-Requires:	gtk+3 >= 3.4.0
+Requires:	gtk+3 >= 3.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,6 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README NEWS ChangeLog
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_libdir}/gnome-contacts-search-provider
+%{_datadir}/appdata/gnome-contacts.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.enums.xml
