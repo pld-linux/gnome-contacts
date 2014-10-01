@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.12.0
+Version:	3.14.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	f00c59f4bff59351d360c8865a67071e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.14/%{name}-%{version}.tar.xz
+# Source0-md5:	867bed6e9dbee5a6be6ec2e6d052340c
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake >= 1.12
@@ -16,7 +16,7 @@ BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk+3-devel >= 3.10.0
+BuildRequires:	gtk+3-devel >= 3.12.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libnotify-devel
@@ -25,11 +25,11 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	telepathy-glib-devel >= 0.17.5
-BuildRequires:	vala >= 2:0.22.0
+BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.38.0
 Requires:	evolution-data-server >= 3.6.0
-Requires:	gtk+3 >= 3.10.0
+Requires:	gtk+3 >= 3.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,9 +71,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README NEWS ChangeLog
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_libdir}/gnome-contacts-search-provider
-%{_datadir}/appdata/gnome-contacts.appdata.xml
+%{_datadir}/appdata/org.gnome.Contacts.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.enums.xml
-%{_datadir}/gnome-shell/search-providers/gnome-contacts-search-provider.ini
-%{_desktopdir}/%{name}.desktop
+%{_datadir}/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
+%{_datadir}/dbus-1/services/org.gnome.Contacts.service
+%{_desktopdir}/org.gnome.Contacts.desktop
