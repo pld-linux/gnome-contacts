@@ -12,7 +12,7 @@ BuildRequires:	automake >= 1.12
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	evolution-data-server-devel >= 3.6.0
 BuildRequires:	folks-devel >= 0.9.5
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
