@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	938c813e41f26588b3de4b2422ebe094
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	cae95879a8bee6993d67df8ae49e2d3e
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake >= 1.12
@@ -20,7 +20,7 @@ BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk+3-devel >= 3.12.0
+BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12
 BuildRequires:	libgee-devel >= 0.10.0
@@ -35,7 +35,7 @@ BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.38.0
 Requires:	evolution-data-server >= 3.13.90
-Requires:	gtk+3 >= 3.12.0
+Requires:	gtk+3 >= 3.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
