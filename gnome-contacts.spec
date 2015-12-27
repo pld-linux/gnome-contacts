@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	cae95879a8bee6993d67df8ae49e2d3e
+# Source0-md5:	55363ad74a89d25948493e8d35f82f86
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	autoconf >= 2.67
 BuildRequires:	automake >= 1.12
@@ -24,7 +24,6 @@ BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libchamplain-devel >= 0.12
 BuildRequires:	libgee-devel >= 0.10.0
-BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
