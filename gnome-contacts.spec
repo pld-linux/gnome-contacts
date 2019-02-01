@@ -1,11 +1,11 @@
 Summary:	Contacts manager for GNOME
 Name:		gnome-contacts
-Version:	3.28.0
-Release:	2
+Version:	3.30.2
+Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	1e3d1ef72fea5aef19c8a42ca61d8d8e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	90e0f06a6be0035084cc9b55070297d3
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	clutter-gtk-devel
@@ -24,7 +24,7 @@ BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libxslt-progs
 BuildRequires:	meson >= 0.37
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.592
+BuildRequires:	rpmbuild(macros) >= 1.727
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	telepathy-glib-devel >= 0.22.0
 BuildRequires:	vala >= 2:0.24.0
@@ -49,7 +49,6 @@ gnome-contacts is a standalone contacts manager for GNOME desktop.
 
 %build
 %meson build \
-	-Dwith-cheese=yes \
 	-Dtelepathy=true
 
 %meson_build -C build
