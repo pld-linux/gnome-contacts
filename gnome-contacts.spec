@@ -1,4 +1,5 @@
 Summary:	Contacts manager for GNOME
+Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
 Version:	3.34
 Release:	1
@@ -48,6 +49,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 gnome-contacts is a standalone contacts manager for GNOME desktop.
+
+%description -l pl.UTF-8
+gnome-contacts to samodzielny zarządca kontaktów dla środowiska GNOME.
 
 %prep
 %setup -q
