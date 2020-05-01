@@ -1,12 +1,16 @@
+#
+# Conditional build:
+%bcond_with	telepathy	# Telepathy support (broken as of 3.36.1)
+
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	3.34.1
-Release:	2
+Version:	3.36.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	fc46610d2a4a5ee476441897ea9d94dc
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	d86e6d942c0c0387e17bd709a2b96bb6
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	clutter-gtk-devel
@@ -20,20 +24,20 @@ BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	gtk+3-devel >= 3.23.1
 BuildRequires:	libgee-devel >= 0.10.0
-BuildRequires:	libhandy-devel >= 0.0.9
+BuildRequires:	libhandy-devel >= 0.0.12
 BuildRequires:	libxslt-progs
-BuildRequires:	meson >= 0.41
+BuildRequires:	meson >= 0.50
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	telepathy-glib-devel >= 0.22.0
+%{?with_telepathy:BuildRequires:	telepathy-glib-devel >= 0.22.0}
 BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	vala-evolution-data-server
 BuildRequires:	vala-folks
 BuildRequires:	vala-gnome-online-accounts
-BuildRequires:	vala-libhandy >= 0.0.9
-BuildRequires:	vala-telepathy-glib >= 0.22.0
+BuildRequires:	vala-libhandy >= 0.0.12
+%{?with_telepathy:BuildRequires:	vala-telepathy-glib >= 0.22.0}
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.44.0
 Requires(post,postun):	gtk-update-icon-cache
@@ -43,8 +47,8 @@ Requires:	folks >= 0.11.4
 Requires:	glib2 >= 1:2.44.0
 Requires:	gnome-desktop >= 3.2.0
 Requires:	gtk+3 >= 3.23.1
-Requires:	libhandy >= 0.0.9
-Requires:	telepathy-glib >= 0.22.0
+Requires:	libhandy >= 0.0.12
+%{?with_telepathy:Requires:	telepathy-glib >= 0.22.0}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,7 +62,7 @@ gnome-contacts to samodzielny zarządca kontaktów dla środowiska GNOME.
 
 %build
 %meson build \
-	-Dtelepathy=true
+	%{?with_telepathy:-Dtelepathy=true}
 
 %ninja_build -C build
 
@@ -92,5 +96,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.gnome.Contacts.appdata.xml
 %{_desktopdir}/org.gnome.Contacts.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Contacts.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Contacts.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Contacts-symbolic.svg
 %{_mandir}/man1/gnome-contacts.1*
