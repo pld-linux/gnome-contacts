@@ -1,30 +1,30 @@
 #
 # Conditional build:
-%bcond_with	telepathy	# Telepathy support (broken as of 3.36.1)
+%bcond_with	telepathy	# Telepathy call/chat support (broken as of 3.36.1-3.38)
 
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	3.36.2
+Version:	3.38
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	35b0856ef578c6ca066d266df4f96ae2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	0124320ae1b218a9b23af1ff8f91a767
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	clutter-gtk-devel
 BuildRequires:	docbook-dtd42-xml
 BuildRequires:	docbook-style-xsl
-BuildRequires:	evolution-data-server-devel >= 3.13.90
-BuildRequires:	folks-devel >= 0.11.4
+BuildRequires:	evolution-data-server-devel >= 3.30
+BuildRequires:	folks-devel >= 0.14
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	glib2-devel >= 1:2.44.0
+BuildRequires:	glib2-devel >= 1:2.58
 BuildRequires:	gnome-desktop-devel >= 3.2.0
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	gtk+3-devel >= 3.23.1
 BuildRequires:	libgee-devel >= 0.10.0
-BuildRequires:	libhandy-devel >= 0.0.12
+BuildRequires:	libhandy1-devel >= 1.0.0
 BuildRequires:	libxslt-progs
 BuildRequires:	meson >= 0.50
 BuildRequires:	ninja >= 1.5
@@ -32,22 +32,22 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 %{?with_telepathy:BuildRequires:	telepathy-glib-devel >= 0.22.0}
-BuildRequires:	vala >= 2:0.24.0
-BuildRequires:	vala-evolution-data-server
-BuildRequires:	vala-folks
+BuildRequires:	vala >= 2:0.40.10
+BuildRequires:	vala-evolution-data-server >= 3.30
+BuildRequires:	vala-folks >= 0.14
 BuildRequires:	vala-gnome-online-accounts
-BuildRequires:	vala-libhandy >= 0.0.12
+BuildRequires:	vala-libhandy1 >= 1.0.0
 %{?with_telepathy:BuildRequires:	vala-telepathy-glib >= 0.22.0}
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.44.0
+Requires(post,postun):	glib2 >= 1:2.58
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	cheese >= 3.4.0
-Requires:	evolution-data-server >= 3.13.90
-Requires:	folks >= 0.11.4
-Requires:	glib2 >= 1:2.44.0
+Requires:	evolution-data-server >= 3.30
+Requires:	folks >= 0.14
+Requires:	glib2 >= 1:2.58
 Requires:	gnome-desktop >= 3.2.0
 Requires:	gtk+3 >= 3.23.1
-Requires:	libhandy >= 0.0.12
+Requires:	libhandy1 >= 1.0.0
 %{?with_telepathy:Requires:	telepathy-glib >= 0.22.0}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
