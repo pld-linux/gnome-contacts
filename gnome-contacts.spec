@@ -5,12 +5,12 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	3.38
+Version:	3.38.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-contacts/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	0124320ae1b218a9b23af1ff8f91a767
+Source0:	https://download.gnome.org/sources/gnome-contacts/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	2b88637aa758d4df2a3754ca18c82d41
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	cheese-devel >= 3.4.0
 BuildRequires:	clutter-gtk-devel
