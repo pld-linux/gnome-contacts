@@ -2,12 +2,12 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	44.0
+Version:	45.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	https://download.gnome.org/sources/gnome-contacts/44/%{name}-%{version}.tar.xz
-# Source0-md5:	b0d1527e81fc58a9141cd9542f3295fd
+Source0:	https://download.gnome.org/sources/gnome-contacts/45/%{name}-%{version}.tar.xz
+# Source0-md5:	d6457fde9fba1b1317d0059b4e1ea2da
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	docbook-dtd42-xml
@@ -17,8 +17,8 @@ BuildRequires:	folks-devel >= 0.14
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk4-devel >= 4.6
-BuildRequires:	libadwaita-devel >= 1.2
+BuildRequires:	gtk4-devel >= 4.12
+BuildRequires:	libadwaita-devel >= 1.4
 BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libportal-gtk4-devel >= 0.6
 BuildRequires:	libxslt-progs
@@ -28,11 +28,11 @@ BuildRequires:	pkgconfig
 BuildRequires:	qrencode-devel >= 4.1.1
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	vala >= 2:0.54.0
+BuildRequires:	vala >= 2:0.56.11
 BuildRequires:	vala-evolution-data-server >= 3.42
 BuildRequires:	vala-folks >= 0.14
 BuildRequires:	vala-gnome-online-accounts
-BuildRequires:	vala-libadwaita >= 1.2
+BuildRequires:	vala-libadwaita >= 1.4
 BuildRequires:	vala-libgee >= 0.10.0
 BuildRequires:	vala-libportal-gtk4 >= 0.6
 BuildRequires:	xz
@@ -41,8 +41,8 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	evolution-data-server >= 3.42
 Requires:	folks >= 0.14
 Requires:	glib2 >= 1:2.64
-Requires:	gtk4 >= 4.6
-Requires:	libadwaita >= 1.2
+Requires:	gtk4 >= 4.12
+Requires:	libadwaita >= 1.4
 Requires:	libportal >= 0.5
 Requires:	qrencode-libs >= 4.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
