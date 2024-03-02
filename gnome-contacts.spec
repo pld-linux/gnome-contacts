@@ -2,12 +2,12 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	45.0
+Version:	45.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
 Source0:	https://download.gnome.org/sources/gnome-contacts/45/%{name}-%{version}.tar.xz
-# Source0-md5:	d6457fde9fba1b1317d0059b4e1ea2da
+# Source0-md5:	2325fdd255531815a4016ffaf7144678
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	docbook-dtd42-xml
