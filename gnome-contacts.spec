@@ -2,12 +2,12 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	46.0
+Version:	47.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	https://download.gnome.org/sources/gnome-contacts/46/%{name}-%{version}.tar.xz
-# Source0-md5:	663d4798f467f83ce82e4f4a4c096d52
+Source0:	https://download.gnome.org/sources/gnome-contacts/47/%{name}-%{version}.tar.xz
+# Source0-md5:	61adcc6efa86f62b7e693b5e2e38c9d6
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Contacts
 BuildRequires:	docbook-dtd42-xml
@@ -17,10 +17,11 @@ BuildRequires:	folks-devel >= 0.14
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
 BuildRequires:	gnome-online-accounts-devel
-BuildRequires:	gtk4-devel >= 4.12
-BuildRequires:	libadwaita-devel >= 1.4
+BuildRequires:	gstreamer-devel >= 1.0
+BuildRequires:	gtk4-devel >= 4.15.3
+BuildRequires:	libadwaita-devel >= 1.6
 BuildRequires:	libgee-devel >= 0.10.0
-BuildRequires:	libportal-gtk4-devel >= 0.6
+BuildRequires:	libportal-gtk4-devel >= 0.7
 BuildRequires:	libxslt-progs
 BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
@@ -32,18 +33,19 @@ BuildRequires:	vala >= 2:0.56.11
 BuildRequires:	vala-evolution-data-server >= 3.42
 BuildRequires:	vala-folks >= 0.14
 BuildRequires:	vala-gnome-online-accounts
-BuildRequires:	vala-libadwaita >= 1.4
+BuildRequires:	vala-libadwaita >= 1.6
 BuildRequires:	vala-libgee >= 0.10.0
-BuildRequires:	vala-libportal-gtk4 >= 0.6
+BuildRequires:	vala-libportal-gtk4 >= 0.7
+BuildRequires:	valadoc >= 2:0.56.11
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.64
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	evolution-data-server >= 3.42
 Requires:	folks >= 0.14
 Requires:	glib2 >= 1:2.64
-Requires:	gtk4 >= 4.12
-Requires:	libadwaita >= 1.4
-Requires:	libportal >= 0.5
+Requires:	gtk4 >= 4.15.3
+Requires:	libadwaita >= 1.6
+Requires:	libportal-gtk4 >= 0.7
 Requires:	qrencode-libs >= 4.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
