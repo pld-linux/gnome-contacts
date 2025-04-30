@@ -2,14 +2,14 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	47.1.1
+Version:	48.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	https://download.gnome.org/sources/gnome-contacts/47/%{name}-%{version}.tar.xz
-# Source0-md5:	25bfad874b156b2bc3a3a27ab3b13395
+Source0:	https://download.gnome.org/sources/gnome-contacts/48/%{name}-%{version}.tar.xz
+# Source0-md5:	4948d4e17036ec744df89dcc7d1528d2
 Patch0:		%{name}-no-update.patch
-URL:		https://wiki.gnome.org/Apps/Contacts
+URL:		https://apps.gnome.org/Contacts/
 BuildRequires:	docbook-dtd42-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	evolution-data-server-devel >= 3.42
@@ -27,7 +27,7 @@ BuildRequires:	meson >= 0.59
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	qrencode-devel >= 4.1.1
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.56.11
 BuildRequires:	vala-evolution-data-server >= 3.42
@@ -60,14 +60,14 @@ gnome-contacts to samodzielny zarządca kontaktów dla środowiska GNOME.
 %patch -P0 -p1
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name}
 
@@ -93,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/services/org.gnome.Contacts.SearchProvider.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Contacts.gschema.xml
 %{_datadir}/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
-%{_datadir}/metainfo/org.gnome.Contacts.appdata.xml
+%{_datadir}/metainfo/org.gnome.Contacts.metainfo.xml
 %{_desktopdir}/org.gnome.Contacts.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Contacts.svg
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Contacts.Devel.svg
