@@ -2,49 +2,53 @@
 Summary:	Contacts manager for GNOME
 Summary(pl.UTF-8):	Zarządca kontaktów dla GNOME
 Name:		gnome-contacts
-Version:	48.0
+Version:	50.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/Communications
-Source0:	https://download.gnome.org/sources/gnome-contacts/48/%{name}-%{version}.tar.xz
-# Source0-md5:	4948d4e17036ec744df89dcc7d1528d2
+Source0:	https://download.gnome.org/sources/gnome-contacts/50/%{name}-%{version}.tar.xz
+# Source0-md5:	e1e82b2d5e18a64a5ef546ca6b726742
 Patch0:		%{name}-no-update.patch
 URL:		https://apps.gnome.org/Contacts/
 BuildRequires:	docbook-dtd42-xml
 BuildRequires:	docbook-style-xsl
-BuildRequires:	evolution-data-server-devel >= 3.42
+BuildRequires:	evolution-data-server-devel >= 3.60
 BuildRequires:	folks-devel >= 0.14
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.64
+BuildRequires:	glycin-devel >= 2.0
+BuildRequires:	glycin-gtk4-devel >= 2.0
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	gstreamer-devel >= 1.0
 BuildRequires:	gtk4-devel >= 4.15.3
-BuildRequires:	libadwaita-devel >= 1.6
+BuildRequires:	libadwaita-devel >= 1.8
 BuildRequires:	libgee-devel >= 0.10.0
 BuildRequires:	libportal-gtk4-devel >= 0.7
 BuildRequires:	libxslt-progs
-BuildRequires:	meson >= 0.59
+BuildRequires:	meson >= 1.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	qrencode-devel >= 4.1.1
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.56.11
-BuildRequires:	vala-evolution-data-server >= 3.42
+BuildRequires:	vala-evolution-data-server >= 3.60
 BuildRequires:	vala-folks >= 0.14
+BuildRequires:	vala-glycin >= 2.0
+BuildRequires:	vala-glycin-gtk4 >= 2.0
 BuildRequires:	vala-gnome-online-accounts
-BuildRequires:	vala-libadwaita >= 1.6
+BuildRequires:	vala-libadwaita >= 1.8
 BuildRequires:	vala-libgee >= 0.10.0
 BuildRequires:	vala-libportal-gtk4 >= 0.7
 BuildRequires:	valadoc >= 2:0.56.11
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.64
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	evolution-data-server >= 3.42
+Requires:	evolution-data-server >= 3.60
 Requires:	folks >= 0.14
 Requires:	glib2 >= 1:2.64
 Requires:	gtk4 >= 4.15.3
-Requires:	libadwaita >= 1.6
+Requires:	libadwaita >= 1.8
 Requires:	libportal-gtk4 >= 0.7
 Requires:	qrencode-libs >= 4.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
